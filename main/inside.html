@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Analytics Dashboard</title>
+	<style>
+		* { box-sizing: border-box; }
+		body { margin: 0; font: 15px Arial, sans-serif; color: #172033; background: #f4f6fb; }
+		.wrap { max-width: 1100px; margin: auto; padding: 36px 22px; }
+		header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+		h1 { margin: 0 0 7px; font-size: 30px; } p { margin: 0; color: #718096; }
+		select { padding: 10px 13px; border: 1px solid #d9e0eb; border-radius: 7px; background: white; color: #172033; }
+		.metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 22px; }
+		.card { padding: 20px; background: white; border: 1px solid #e6eaf1; border-radius: 11px; box-shadow: 0 3px 12px #1720330b; }
+		.label { color: #718096; font-size: 13px; } .number { display: block; margin: 11px 0 7px; font-size: 28px; font-weight: bold; }
+		.positive { color: #159570; font-size: 12px; } .negative { color: #d05261; font-size: 12px; }
+		.chart { margin-bottom: 22px; } h2 { margin: 0 0 20px; font-size: 18px; }
+		.bars { height: 210px; display: flex; align-items: end; gap: 5%; padding: 10px 2% 0; border-bottom: 1px solid #e8ecf2; }
+		.bar { flex: 1; min-height: 12px; background: #5967e8; border-radius: 6px 6px 0 0; }
+		.axis { display: flex; justify-content: space-between; padding: 10px 2%; color: #8a94a6; font-size: 12px; }
+		table { width: 100%; border-collapse: collapse; } th, td { padding: 13px 8px; text-align: left; border-bottom: 1px solid #edf0f4; } th { color: #718096; font-size: 12px; font-weight: normal; }
+		@media (max-width: 700px) { header { align-items: flex-start; gap: 18px; flex-direction: column; } .metrics { grid-template-columns: repeat(2, 1fr); } }
+	</style>
+</head>
+<body>
+	<main class="wrap">
+		<header><div><h1>Analytics</h1><p>Track your performance and understand your audience.</p></div><select aria-label="Date range"><option>Last 30 days</option><option>Last 90 days</option><option>This year</option></select></header>
+		<section class="metrics" aria-label="Key metrics">
+			<article class="card"><span class="label">Total visitors</span><strong class="number">24,892</strong><span class="positive">↑ 12.5% from last period</span></article>
+			<article class="card"><span class="label">Page views</span><strong class="number">68,421</strong><span class="positive">↑ 8.2% from last period</span></article>
+			<article class="card"><span class="label">Conversion rate</span><strong class="number">4.8%</strong><span class="positive">↑ 1.4% from last period</span></article>
+			<article class="card"><span class="label">Bounce rate</span><strong class="number">32.6%</strong><span class="negative">↓ 3.1% from last period</span></article>
+		</section>
+		<section class="card chart"><h2>Visitors over time</h2><div class="bars"><i class="bar" style="height:42%"></i><i class="bar" style="height:57%"></i><i class="bar" style="height:48%"></i><i class="bar" style="height:70%"></i><i class="bar" style="height:61%"></i><i class="bar" style="height:88%"></i><i class="bar" style="height:76%"></i></div><div class="axis"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span></div></section>
+		<section class="card"><h2>Top pages</h2><table><thead><tr><th>Page</th><th>Views</th><th>Avg. time</th><th>Conversions</th></tr></thead><tbody><tr><td>Homepage</td><td>18,240</td><td>2m 14s</td><td>1,248</td></tr><tr><td>Product overview</td><td>12,806</td><td>3m 02s</td><td>962</td></tr><tr><td>Pricing</td><td>8,441</td><td>1m 48s</td><td>734</td></tr></tbody></table></section>
+	</main>
+</body>
+</html>
