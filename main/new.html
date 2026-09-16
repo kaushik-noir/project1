@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Dashboard</title>
+	<style>
+		:root { --ink:#172033; --muted:#77809a; --line:#e9edf5; --purple:#6657e8; --bg:#f7f8fc; }
+		* { box-sizing:border-box; }
+		body { margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, sans-serif; color:var(--ink); background:var(--bg); }
+		.layout { display:flex; min-height:100vh; }
+		aside { width:250px; padding:28px 18px; background:#fff; border-right:1px solid var(--line); }
+		.brand { display:flex; align-items:center; gap:10px; margin:0 14px 52px; font-size:20px; font-weight:800; }
+		.logo { display:grid; place-items:center; width:34px; height:34px; color:#fff; background:var(--purple); border-radius:10px; font-size:16px; }
+		nav a { display:flex; align-items:center; gap:14px; margin:7px 0; padding:12px 14px; color:var(--muted); text-decoration:none; border-radius:10px; font-size:14px; font-weight:600; }
+		nav a.active, nav a:hover { color:var(--purple); background:#f0efff; }
+		nav span { width:20px; text-align:center; font-size:17px; }
+		.help { margin-top:100px; padding:18px; color:#59627b; background:#f4f3ff; border-radius:14px; font-size:12px; line-height:1.5; }
+		.help strong { display:block; margin-bottom:6px; color:var(--ink); font-size:13px; }
+		main { flex:1; padding:30px 4%; overflow:hidden; }
+		header { display:flex; justify-content:space-between; align-items:center; margin-bottom:32px; }
+		h1 { margin:0 0 5px; font-size:28px; letter-spacing:-.7px; }
+		header p { margin:0; color:var(--muted); font-size:13px; }
+		.profile { display:flex; align-items:center; gap:11px; }
+		.avatar { display:grid; place-items:center; width:38px; height:38px; color:#fff; background:#ed9a73; border-radius:50%; font-size:13px; font-weight:700; }
+		.profile b { display:block; font-size:13px; }.profile small { color:var(--muted); }
+		.cards { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-bottom:24px; }
+		.card, .panel { padding:20px; background:#fff; border:1px solid var(--line); border-radius:14px; box-shadow:0 3px 15px #29355b05; }
+		.card-top { display:flex; justify-content:space-between; color:var(--muted); font-size:13px; }
+		.metric { margin:14px 0 8px; font-size:26px; font-weight:750; }
+		.trend { color:#18a979; font-size:12px; font-weight:700; }.trend.down { color:#e16c6c; }
+		.icon { display:grid; place-items:center; width:34px; height:34px; color:var(--purple); background:#f0efff; border-radius:9px; }
+		.grid { display:grid; grid-template-columns:1.55fr 1fr; gap:24px; }
+		.panel-heading { display:flex; justify-content:space-between; align-items:center; margin-bottom:22px; }
+		h2 { margin:0; font-size:16px; }.select { padding:7px 10px; color:var(--muted); background:#fff; border:1px solid var(--line); border-radius:7px; font-size:12px; }
+		.chart { display:flex; align-items:end; gap:13px; height:210px; padding:10px 4px 0; border-bottom:1px solid var(--line); background:repeating-linear-gradient(to bottom, transparent 0, transparent 51px, #f1f3f8 52px); }
+		.bar-wrap { display:flex; align-items:center; flex:1; flex-direction:column; height:100%; justify-content:end; gap:9px; color:var(--muted); font-size:11px; }.bar { width:100%; max-width:34px; background:linear-gradient(#8175ee,#6253df); border-radius:6px 6px 0 0; }
+		.activity { display:flex; gap:12px; padding:15px 0; border-bottom:1px solid var(--line); }.activity:last-child { border:0; }.dot { width:9px; height:9px; margin-top:5px; background:#6b5ce7; border-radius:50%; }.activity p { margin:0; font-size:13px; line-height:1.45; }.activity time { display:block; margin-top:4px; color:var(--muted); font-size:11px; }
+		@media (max-width:850px) { aside { width:76px; padding:22px 10px; }.brand { margin:0 10px 45px; }.brand label, nav a label, .help { display:none; } nav a { justify-content:center; padding:13px; }.cards { grid-template-columns:repeat(2,1fr); }.grid { grid-template-columns:1fr; } }
+		@media (max-width:520px) { main { padding:22px 16px; } .cards { grid-template-columns:1fr; } header { align-items:flex-start; gap:15px; flex-direction:column; } }
+	</style>
+</head>
+<body>
+	<div class="layout">
+		<aside>
+			<div class="brand"><span class="logo">◈</span><label>Orbit</label></div>
+			<nav>
+				<a class="active" href="#"><span>⌂</span><label>Overview</label></a>
+				<a href="#"><span>▦</span><label>Analytics</label></a>
+				<a href="#"><span>♧</span><label>Customers</label></a>
+				<a href="#"><span>▤</span><label>Reports</label></a>
+				<a href="#"><span>⚙</span><label>Settings</label></a>
+			</nav>
+			<div class="help"><strong>Need a hand?</strong>Our support team is here to help you get the most from Orbit.</div>
+		</aside>
+		<main>
+			<header><div><h1>Good morning, Alex 👋</h1><p>Here’s what’s happening with your business today.</p></div><div class="profile"><div class="avatar">AM</div><div><b>Alex Morgan</b><small>Administrator</small></div></div></header>
+			<section class="cards">
+				<div class="card"><div class="card-top"><span>Total revenue</span><span class="icon">$</span></div><div class="metric">$24,780</div><span class="trend">↗ 12.5% this month</span></div>
+				<div class="card"><div class="card-top"><span>Active users</span><span class="icon">♙</span></div><div class="metric">8,492</div><span class="trend">↗ 8.2% this month</span></div>
+				<div class="card"><div class="card-top"><span>New sign ups</span><span class="icon">＋</span></div><div class="metric">1,248</div><span class="trend">↗ 4.6% this month</span></div>
+				<div class="card"><div class="card-top"><span>Conversion rate</span><span class="icon">◉</span></div><div class="metric">6.84%</div><span class="trend down">↘ 1.2% this month</span></div>
+			</section>
+			<section class="grid">
+				<div class="panel"><div class="panel-heading"><h2>Revenue overview</h2><select class="select"><option>Last 6 months</option></select></div><div class="chart"><div class="bar-wrap"><i class="bar" style="height:42%"></i>Jan</div><div class="bar-wrap"><i class="bar" style="height:57%"></i>Feb</div><div class="bar-wrap"><i class="bar" style="height:48%"></i>Mar</div><div class="bar-wrap"><i class="bar" style="height:72%"></i>Apr</div><div class="bar-wrap"><i class="bar" style="height:65%"></i>May</div><div class="bar-wrap"><i class="bar" style="height:88%"></i>Jun</div></div></div>
+				<div class="panel"><div class="panel-heading"><h2>Recent activity</h2><a href="#" style="color:#6657e8;font-size:12px;font-weight:700;text-decoration:none">View all</a></div><div class="activity"><i class="dot"></i><p><b>New payment received</b><br>Acme Inc. paid an invoice<time>12 minutes ago</time></p></div><div class="activity"><i class="dot" style="background:#f2a36e"></i><p><b>New user registered</b><br>Sarah joined your workspace<time>45 minutes ago</time></p></div><div class="activity"><i class="dot" style="background:#55b8a0"></i><p><b>Report generated</b><br>Monthly performance report<time>2 hours ago</time></p></div></div>
+			</section>
+		</main>
+	</div>
+</body>
+</html>
